@@ -41,7 +41,8 @@ namespace install_chocolatey
 
                 choco.Set(conf => conf.CommandName = "upgrade");
                 choco.RunConsole(new string[] { "-y", "--force", "chocolatey" });
-                choco.RunConsole(new string[] { "-y", "--force", "chocolatey-gui" });
+                choco.Set(conf => conf.CommandName = "upgrade");
+                choco.RunConsole(new string[] { "-y", "--force", "chocolateygui" });
 
                 Console.Write("\n\nSetup was successful. Press any key to quit.\n");
             }
