@@ -2,12 +2,12 @@
   <PropertyGroup>
     <ProjectGuid>{E0F8D1D0-B649-476B-860A-3D17D42475F9}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>install_chocolatey</RootNamespace>
+    <RootNamespace>bootstrapper</RootNamespace>
     <TargetFramework>net48</TargetFramework>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <AssemblyTitle>install-chocolatey</AssemblyTitle>
-    <Product>install-chocolatey</Product>
-    <Copyright>Copyright ©  2021</Copyright>
+    <AssemblyTitle>bootstrapper</AssemblyTitle>
+    <Product>bootstrapper</Product>
+    <Copyright>Copyright © 2021 Dontnod Entertainment</Copyright>
     <OutputPath>bin\$(Configuration)\</OutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">

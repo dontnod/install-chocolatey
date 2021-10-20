@@ -5,7 +5,7 @@ using System.Diagnostics;
 using System.Reflection;
 using System.Security.Principal;
 
-namespace install_chocolatey
+namespace bootstrapper
 {
     class Program
     {
@@ -23,7 +23,6 @@ namespace install_chocolatey
                 try
                 {
                     p.Start();
-                    return;
                 }
                 catch
                 {
@@ -43,11 +42,7 @@ namespace install_chocolatey
                 choco.RunConsole(new string[] { "-y", "--force", "chocolatey" });
                 choco.Set(conf => conf.CommandName = "upgrade");
                 choco.RunConsole(new string[] { "-y", "--force", "chocolateygui" });
-
-                Console.Write("\n\nSetup was successful. Press any key to quit.\n");
             }
-
-            Console.ReadKey();
         }
     }
 }

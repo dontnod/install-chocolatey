@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <ProjectGuid>{7EEAB141-F61A-4185-879F-8F2F7FE8C809}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <!--<IntermediateOutputPath>$(SolutionDir)/.build/Patoune.Installer/Intermediate/$(Configuration)</IntermediateOutputPath>-->
+    <!--<OutputPath>$(SolutionDir)/$(Configuration)</OutputPath>-->
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' " />
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' " />
+  <ItemGroup>
+    <None Include="installer.iss" />
+  </ItemGroup>
+  <Target Name="Build">
+    <Exec Command="&quot;C:/Program Files (x86)/Inno Setup 6/ISCC.exe&quot; installer.iss" />
+  </Target>
+  <Target Name="Clean" />
+  <Target Name="Rebuild" DependsOnTargets="Clean;Build" />
+</Project>
