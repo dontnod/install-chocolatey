@@ -1,0 +1,9 @@
+.vs/
+*.v12.suo
+*.VC.db
+*.VC.opendb
+*.vcxproj.user
+*.csproj.user
+
+bin/
+obj/
