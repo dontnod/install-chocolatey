@@ -27,7 +27,7 @@ namespace bootstrapper
             choco.SetCustomLogging(new NullLog());
 
             choco.Set(conf => conf.CommandName = args.FirstOrDefault());
-            choco.RunConsole(args.Skip(1).ToArray());
+            choco.RunConsole(args.ToArray());
         }
 
         static bool IsAdministrator()
