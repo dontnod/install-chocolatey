@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "bootstrapper", "bootstrapper\bootstrapper.csproj", "{E0F8D1D0-B649-476B-860A-3D17D42475F9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "installer", "installer.csproj", "{7EEAB141-F61A-4185-879F-8F2F7FE8C809}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E0F8D1D0-B649-476B-860A-3D17D42475F9} = {E0F8D1D0-B649-476B-860A-3D17D42475F9}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
