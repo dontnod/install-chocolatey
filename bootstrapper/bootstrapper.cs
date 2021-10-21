@@ -2,6 +2,7 @@
 using chocolatey.infrastructure.logging;
 using System;
 using System.Diagnostics;
+using System.Linq;
 using System.Reflection;
 using System.Security.Principal;
 
@@ -25,10 +26,8 @@ namespace bootstrapper
             var choco = Lets.GetChocolatey();
             choco.SetCustomLogging(new NullLog());
 
-            choco.Set(conf => conf.CommandName = "upgrade");
-            choco.RunConsole(new string[] { "-y", "--force", "chocolatey" });
-            choco.Set(conf => conf.CommandName = "upgrade");
-            choco.RunConsole(new string[] { "-y", "--force", "chocolateygui" });
+            choco.Set(conf => conf.CommandName = args.FirstOrDefault());
+            choco.RunConsole(args.Skip(1).ToArray());
         }
 
         static bool IsAdministrator()

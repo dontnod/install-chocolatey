@@ -31,10 +31,21 @@ DisableDirPage=yes
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl"
 
+[Types]
+Name: "full"; Description: "Full installation"
+Name: "custom"; Description: "Custom installation"; Flags: iscustom
+
+[Components]
+Name: "chocolatey"; Description: "Chocolatey"; Types: custom full; Flags: fixed
+Name: "chocolateygui"; Description: "Graphical Interface for Chocolatey"; Types: custom full
+
 [Files]
 Source: "{#BuildDirectory}/bootstrapper.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#BuildDirectory}/chocolatey.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#BuildDirectory}/log4net.dll"; DestDir: "{app}"; Flags: ignoreversion
 
 [Run]
-Filename: "{app}\bootstrapper.exe"; Flags: runascurrentuser runhidden
+Filename: "{app}\bootstrapper.exe"; Parameters: "upgrade -y --force chocolatey"; \
+    Flags: runascurrentuser runhidden; Components: chocolatey
+Filename: "{app}\bootstrapper.exe"; Parameters: "upgrade -y --force chocolateygui"; \
+    Flags: runascurrentuser runhidden; Components: chocolateygui
