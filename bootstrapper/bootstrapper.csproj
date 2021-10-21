@@ -3,7 +3,7 @@
     <ProjectGuid>{E0F8D1D0-B649-476B-860A-3D17D42475F9}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>bootstrapper</RootNamespace>
-    <TargetFramework>net48</TargetFramework>
+    <TargetFramework>net47</TargetFramework>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <AssemblyTitle>bootstrapper</AssemblyTitle>
     <Product>bootstrapper</Product>

@@ -4,7 +4,7 @@
 
 #define Configuration "Release"
 #define Platform "x64"
-#define BuildDirectory "bootstrapper/bin/" + Configuration + "/net48"
+#define BuildDirectory "bootstrapper/bin/" + Configuration + "/net47"
 #define Executable "bootstrapper.exe"
 
 ; If the application executable does not exist, GetFileVersion fails silently,
