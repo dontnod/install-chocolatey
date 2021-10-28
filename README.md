@@ -9,9 +9,9 @@ are not familiar with.
 This simple installer takes care of everyting, with the possibility of installing Chocolatey
 GUI, as well as specifying an additional package source for some enterprise scenarios.
 
-## Download
+## Downloads
 
-Latest release: [0.1.0]()
+Latest release: [InstallChocolatey 0.2.0](https://github.com/dontnod/install-chocolatey/releases/download/0.2.0/InstallChocolatey-0.2.0.0.exe)
 
 ## Screenshots
 
