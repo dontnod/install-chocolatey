@@ -1,10 +1,10 @@
 # InstallChocolatey
 
-This is a simple `.exe` installer for Chocolatey.
+This is a simple `.exe` installer for the [Chocolatey](https://chocolatey.org/) package manager.
 
 Installing Chocolatey is [not very user-friendly](https://chocolatey.org/install) because it
 involves running PowerShell commands with administrative privileges, something most end-users
-are not familiar with.
+are not comfortable with.
 
 This simple installer takes care of everyting, with the possibility of installing Chocolatey
 GUI, as well as specifying an additional package source for some enterprise scenarios.
