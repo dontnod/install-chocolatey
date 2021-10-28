@@ -59,43 +59,53 @@ Filename: "{app}\bootstrapper.exe"; Parameters: "{code:get_custom_source_params}
 var
     custom_page: TInputQueryWizardPage;
 
+function get_custom_field(i: integer): string;
+begin
+    result := custom_page.Values[i];
+    stringchangeex(result, '"', '""', true);
+end;
+
+function get_custom_source_params(_: string): string;
+var
+    custom_name, custom_url, custom_user, custom_pass: string;
+begin
+    custom_name := get_custom_field(0);
+    custom_url := get_custom_field(1);
+    custom_user := get_custom_field(2);
+    custom_pass := get_custom_field(3);
+    result := format('source add --name="%s" --source="%s"', [custom_name, custom_url])
+    if custom_user <> '' then begin
+        result := result + format(' --user="%s" --password="%s"', [custom_user, custom_pass])
+    end;
+end;
+
 procedure InitializeWizard;
 begin
     custom_page := CreateInputQueryPage(wpSelectComponents,
         'Custom Package Source',
         'Add an optional package source',
         'Add a custom package source, or click "Next" to skip this step');
-    custom_page.Add('Source name:', False);
-    custom_page.Add('Source URL:', False);
-    custom_page.Add('Login (optional):', False);
-    custom_page.Add('Password (optional):', True);
+    custom_page.Add('Source name:', false);
+    custom_page.Add('Source URL:', false);
+    custom_page.Add('Username (optional):', false);
+    custom_page.Add('Password (optional):', true);
 end;
 
-function NextButtonClick(page_id: Integer): Boolean;
+function NextButtonClick(page_id: integer): boolean;
 begin
-    Result := True;
+    result := true;
     if page_id = custom_page.ID then begin
-        if custom_page.Values[0] = '' then begin
+        if get_custom_field(0) = '' then begin
           MsgBox('Package source name is empty', mbError, MB_OK);
-          Result := False;
-        end else if custom_page.Values[1] = '' then begin
+          result := false;
+        end else if get_custom_field(1) = '' then begin
           MsgBox('Package source URL is empty', mbError, MB_OK);
-          Result := False;
+          result := false;
         end;
     end;
 end;
 
-function ShouldSkipPage(page_id: Integer): Boolean;
+function ShouldSkipPage(page_id: integer): boolean;
 begin
-    Result := (page_id = custom_page.ID) and not WizardIsComponentSelected('custom_source');
-end;
-
-function get_custom_source_params(_: string): string;
-begin
-    Result := 'source add --name="' + custom_page.Values[0] + '"' +
-                        ' --source="' + custom_page.Values[1] + '"'
-    if custom_page.Values[2] <> '' then begin
-        Result := Result + ' --user="' + custom_page.Values[2] + '"' +
-                           ' --password="' + custom_page.Values[3] + '"'
-    end;
+    result := (page_id = custom_page.ID) and not WizardIsComponentSelected('custom_source');
 end;
