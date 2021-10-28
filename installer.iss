@@ -38,7 +38,7 @@ Name: "custom"; Description: "Custom installation"; Flags: iscustom
 [Components]
 Name: "chocolatey"; Description: "Chocolatey"; Types: custom full; Flags: fixed
 Name: "chocolatey_gui"; Description: "Graphical interface for Chocolatey"; Types: custom full
-Name: "custom_source"; Description: "Custom package source"; Types: custom full
+Name: "custom_source"; Description: "Add a custom package source"; Types: custom full
 
 [Files]
 Source: "{#BuildDirectory}/bootstrapper.exe"; DestDir: "{app}"; Flags: ignoreversion
