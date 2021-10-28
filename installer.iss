@@ -54,6 +54,8 @@ Filename: "{app}\bootstrapper.exe"; Parameters: "upgrade -y --force chocolateygu
     Flags: runascurrentuser runhidden; Components: chocolatey_gui
 Filename: "{app}\bootstrapper.exe"; Parameters: "{code:get_custom_source_params}"; \
     Flags: runascurrentuser runhidden; Components: custom_source
+Filename: "chocolateygui.exe"; \
+    Flags: postinstall; Components: chocolatey_gui
 
 [Code]
 var
