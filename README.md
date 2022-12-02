@@ -11,7 +11,7 @@ GUI, as well as specifying an additional package source for some enterprise scen
 
 ## Downloads
 
-Latest release: [InstallChocolatey 0.2.0](https://github.com/dontnod/install-chocolatey/releases/download/0.2.0/InstallChocolatey-0.2.0.0.exe)
+Latest release: [InstallChocolatey 0.3.0](https://github.com/dontnod/install-chocolatey/releases/download/0.3.0/InstallChocolatey-0.3.0.0.exe)
 
 ## Screenshots
 
